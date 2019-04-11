@@ -1,0 +1,47 @@
+﻿
+@{
+    /**/
+
+    /**/
+
+    /**/
+
+    /**/
+
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Modulo de Informe";
+}
+
+<h2>Modulo de Informe</h2>
+
+
+<br />
+@Html.Label("Pulsa para ir a una accion", new { @class = "control-label col-md-5" })
+
+
+@Html.ActionLink("Informe de Nomina","InformeNomina", "Informes", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Empleados Activos","InformeEmpleadosActivos", "Informes", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Empleados Inactivos","InformeEmpleadosInactivos","Informes", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Departamentos", "TablaDepartamento", "Mantenimiento", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Cargos", "TablaCargos", "Mantenimiento", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Fechas de Entrada de Empleados","EmpleadoActivoFecha","Informes", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Informe de Fechas de Salida de Empleados","EmpleadoInactivoFecha", "Informes", "Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Historial de Permisos","InformePermisos","Informes", "Home",
+new { @class = "btn btn-primary" })

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FinalCodeFirst.Models.Permiso>
+
+@{
+    ViewBag.Title = "Historial Permisos";
+}
+
+<h2>Historial Permisos</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+
+    <div class="SB">
+
+        <input type="text" class="ST" placeholder="Buscar..." name="buscarEmpleado" />
+        <input type="submit" value="Buscar Empleado" class="btn btn-outline-success " />
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado)
+            </th>
+            <th>
+                @Html.Label("Fecha Inicio")
+            </th>
+            <th>
+                @Html.Label("Fecha Final")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentarios)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaFinal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentarios)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}

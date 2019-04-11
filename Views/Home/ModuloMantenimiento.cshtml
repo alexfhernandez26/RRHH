@@ -1,0 +1,25 @@
+﻿
+@{
+    /**/
+
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Modulo de Mantenimiento";
+}
+
+<h2>Modulo de Mantenimiento</h2>
+<br />
+@Html.Label("Pulsa para ir a una accion", new { @class = "control-label col-md-5" })
+
+
+@Html.ActionLink("Agregar Empleado", "Empleado","Mantenimiento", "Home",
+new { @class = "btn btn-primary" })
+<br />
+
+@Html.ActionLink("Agregar Departamentos", "Departamento", "Mantenimiento","Home",
+new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("Agregar Cargo", "Cargo", "Mantenimiento", "Home" ,
+new { @class = "btn btn-primary" })

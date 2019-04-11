@@ -1,0 +1,94 @@
+﻿@model IEnumerable<FinalCodeFirst.Models.Empleado>
+
+@{
+    ViewBag.Title = "InformeEmpleadosInactivos";
+}
+
+<h2>Informe Empleados Inactivos</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <br />
+
+    <div>
+        @Html.Label("Nombre", htmlAttributes:
+         new { @class = "Ti" })
+        @Html.RadioButton("Estado", "1")
+
+        @Html.Label("Departamento", htmlAttributes:
+         new { @class = "Ti" })
+        @Html.RadioButton("Estado", "2")
+        <input type="text" class="form-control" placeholder="Buscar..." name="buscarEmpleado" />
+        <input type="submit" value="Buscar Empleado" class="btn btn-outline-success " />
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Nombre Empleado")
+            </th>
+            <th>
+                @Html.Label("Apellido Empleado")
+            </th>
+            <th>
+                @Html.Label("Telefono")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEmpleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoEmpleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}

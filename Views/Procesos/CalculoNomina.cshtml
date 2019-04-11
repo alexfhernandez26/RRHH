@@ -1,0 +1,59 @@
+﻿@model FinalCodeFirst.Models.CalculoNomina
+
+@{
+    /**/
+
+    ViewBag.Title = "CalculoNomina";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>CalculoNomina</h4>
+    <br />
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <br />
+
+    <div class="form-group badge-info col-md-10">
+       
+        <p>
+              A continuacion se muestra el monto total de la nomina basado en los empleados
+              Activos,
+            <br />
+              si desea guardar esta informacion precione el boton
+             "Enviar Informacion"
+        </p>
+       
+    </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                @Html.Label("Fecha del Calculo  ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="date" name="FechaNomina" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("El Monto Total de su Nomina", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-10">
+                    @ViewBag.Nomina
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Eviar Informacion" class="btn btn-outline-success" />
+                    <br />
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    }

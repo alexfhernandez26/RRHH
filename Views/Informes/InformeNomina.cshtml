@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FinalCodeFirst.Models.CalculoNomina>
+
+
+@{
+    /**/
+
+    ViewBag.Title = "InformeNomina";
+}
+
+<h2>Informe Nomina</h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <div class="SB">
+        <input type="date" class="ST" placeholder="Buscar por año o Mes" name="buscarNomina" />
+        <input type="submit" value="Buscar Fecha" class="btn btn-outline-success " />
+      
+    </div>
+
+
+
+    <br />
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Fecha Nomina")
+            </th>
+            <th>
+                @Html.Label("Monto Total")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNomina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MontoTotal)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+}
